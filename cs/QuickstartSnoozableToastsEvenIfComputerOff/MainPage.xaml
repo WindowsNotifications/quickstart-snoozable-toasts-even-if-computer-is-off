@@ -1,0 +1,48 @@
+﻿<Page
+    x:Class="QuickstartSnoozableToastsEvenIfComputerOff.MainPage"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:local="using:QuickstartSnoozableToastsEvenIfComputerOff"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    mc:Ignorable="d"
+    Background="{ThemeResource ApplicationPageBackgroundThemeBrush}">
+
+    <ScrollViewer Background="{ThemeResource ApplicationPageBackgroundThemeBrush}">
+
+        <StackPanel Margin="24">
+
+            <TextBlock
+                Text="Quickstart: Snoozable toasts even if computer is off"
+                Style="{StaticResource TitleTextBlockStyle}"
+                TextWrapping="Wrap"/>
+
+            <RichTextBlock Margin="0,12,0,0">
+                <Paragraph>
+                    This app illustrates how to create a snoozable toast notification that will handle the case where the computer is turned off for multiple hours or days.
+                </Paragraph>
+            </RichTextBlock>
+
+            <Button
+                x:Name="ButtonSendToast"
+                Content="Click to pop initial toast"
+                Click="ButtonSendToast_Click"
+                HorizontalAlignment="Stretch"
+                Margin="0,12,0,0"/>
+
+            <RichTextBlock Margin="0,12,0,0">
+                <Paragraph>The button above pops a new toast using the local toast API's, and it includes a snooze time input and a snooze button that activates a background task when clicked.</Paragraph>
+                <Paragraph/>
+                <Paragraph>When the snooze button is clicked, the toast activates our background task. Our background task obtains the snooze time the user selected, and then schedules a time trigger background task to run at that specified time.</Paragraph>
+                <Paragraph/>
+                <Paragraph>When the time trigger runs, it simply pops the toast notification again, making it re-appear for the user.</Paragraph>
+                <Paragraph/>
+                <Paragraph>Feel free to close the app after clicking the initial pop toast button. The experience will continue to operate even when the app is closed.</Paragraph>
+            </RichTextBlock>
+
+        </StackPanel>
+
+
+
+    </ScrollViewer>
+</Page>
